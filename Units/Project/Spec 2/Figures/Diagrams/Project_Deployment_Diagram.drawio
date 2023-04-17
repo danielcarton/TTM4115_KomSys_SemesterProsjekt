@@ -1,0 +1,114 @@
+<mxfile host="65bd71144e">
+    <diagram id="It05KLNP4bwDYOWpY8ZD" name="Startpage">
+        <mxGraphModel dx="1207" dy="846" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="25" value="" style="group" parent="1" vertex="1" connectable="0">
+                    <mxGeometry x="600" y="80" width="180" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="«device»&lt;br&gt;Student client" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;verticalAlign=top;" parent="25" vertex="1">
+                    <mxGeometry width="180" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="" style="group" parent="25" vertex="1" connectable="0">
+                    <mxGeometry x="30" y="60" width="140" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="«artefact»&lt;br&gt;Web browser" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;" parent="17" vertex="1">
+                    <mxGeometry width="140" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="«artefact»&lt;br&gt;Webpage - student logon" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;" parent="17" vertex="1">
+                    <mxGeometry x="7" y="40" width="123" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="" style="group" parent="1" vertex="1" connectable="0">
+                    <mxGeometry x="600" y="305" width="180" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="«device»&lt;br&gt;Teacher client" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;verticalAlign=top;" parent="26" vertex="1">
+                    <mxGeometry width="180" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="" style="group" parent="26" vertex="1" connectable="0">
+                    <mxGeometry x="30" y="60" width="140" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="«artefact»&lt;br&gt;Web browser" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;" parent="19" vertex="1">
+                    <mxGeometry width="140" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="«artefact»&lt;br&gt;Webpage - Teacher logon" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;" parent="19" vertex="1">
+                    <mxGeometry x="7" y="40" width="123" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="" style="group" parent="1" vertex="1" connectable="0">
+                    <mxGeometry x="600" y="524" width="180" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="«device»&lt;br&gt;TA client" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;verticalAlign=top;" parent="27" vertex="1">
+                    <mxGeometry width="180" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="" style="group" parent="27" vertex="1" connectable="0">
+                    <mxGeometry x="30" y="60" width="140" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="«artefact»&lt;br&gt;Web browser" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;" parent="22" vertex="1">
+                    <mxGeometry width="140" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="«artefact»&lt;br&gt;Webpage - TA logon" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;" parent="22" vertex="1">
+                    <mxGeometry x="7" y="40" width="123" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" style="edgeStyle=none;html=1;entryX=0;entryY=0;entryDx=0;entryDy=75;entryPerimeter=0;startArrow=classic;startFill=1;exitX=0;exitY=0;exitDx=210;exitDy=294.7547169811321;exitPerimeter=0;" parent="1" source="2" target="3" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="490" y="380"/>
+                            <mxPoint x="490" y="155"/>
+                        </Array>
+                        <mxPoint x="430" y="350" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="32" style="edgeStyle=none;html=1;entryX=0;entryY=0;entryDx=0;entryDy=75;entryPerimeter=0;startArrow=classic;startFill=1;exitX=0;exitY=0;exitDx=210;exitDy=294.7547169811321;exitPerimeter=0;" parent="1" source="2" target="4" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="440" y="380" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="33" style="edgeStyle=none;html=1;entryX=0;entryY=0;entryDx=0;entryDy=75;entryPerimeter=0;startArrow=classic;startFill=1;exitX=0;exitY=0;exitDx=210;exitDy=294.7547169811321;exitPerimeter=0;" parent="1" source="2" target="5" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="490" y="380"/>
+                            <mxPoint x="490" y="599"/>
+                        </Array>
+                        <mxPoint x="420" y="400" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="36" value="&lt;span style=&quot;&quot;&gt;«&lt;/span&gt;&lt;span style=&quot;&quot;&gt;HTTP/TCP»&lt;br&gt;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="490" y="570" width="100" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" value="&lt;span style=&quot;&quot;&gt;«&lt;/span&gt;&lt;span style=&quot;&quot;&gt;HTTP/TCP&lt;/span&gt;»&lt;span style=&quot;&quot;&gt;&lt;br&gt;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="490" y="130" width="100" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" value="&lt;span style=&quot;&quot;&gt;«&lt;/span&gt;&lt;span style=&quot;&quot;&gt;HTTP/TCP&lt;/span&gt;»&lt;span style=&quot;&quot;&gt;&lt;br&gt;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="500" y="350" width="100" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="63" value="" style="group" parent="1" vertex="1" connectable="0">
+                    <mxGeometry x="210" y="85.25" width="210" height="624.75" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="«device»&lt;br&gt;Webserver Host&lt;br&gt;Raspberry Pi" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;verticalAlign=top;container=0;" parent="63" vertex="1">
+                    <mxGeometry width="210" height="624.75" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="«artefact»&lt;br&gt;Finite state Machine" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;container=0;" parent="63" vertex="1">
+                    <mxGeometry x="31" y="74.75" width="168" height="425.25" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" value="«artefact»&lt;br&gt;Local database" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;container=0;" parent="63" vertex="1">
+                    <mxGeometry x="31.5" y="508.3530537564484" width="168.5" height="100.10845848968725" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" value="«artefact»&lt;br&gt;Provide MQTT services" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;container=0;" parent="63" vertex="1">
+                    <mxGeometry x="52" y="415.23806136350277" width="126" height="68.73834044169895" as="geometry"/>
+                </mxCell>
+                <mxCell id="47" value="«artefact»&lt;br&gt;GUI element display" style="whiteSpace=wrap;html=1;fillColor=default;verticalAlign=top;container=0;" parent="63" vertex="1">
+                    <mxGeometry x="42.5" y="124.75" width="145" height="275.25" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="«artefact»&lt;br&gt;Assistance chat room" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;container=0;" parent="63" vertex="1">
+                    <mxGeometry x="52.75" y="164.74932754808287" width="126" height="68.13880703450009" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="«artefact»&lt;br&gt;Task Progress &lt;br&gt;tracker &amp;amp; list" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;container=0;" parent="63" vertex="1">
+                    <mxGeometry x="52.75" y="244.75158149080158" width="126" height="68.73834044169895" as="geometry"/>
+                </mxCell>
+                <mxCell id="64" value="«artefact»&lt;br&gt;Change user&lt;br&gt;access" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;container=0;" vertex="1" parent="63">
+                    <mxGeometry x="52.75" y="321.2615814908016" width="126" height="68.73834044169895" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
