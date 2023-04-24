@@ -1,0 +1,6 @@
+{
+    "python.analysis.extraPaths": [
+        "./Term project/Code/state_machine",
+        "./Term project/Code/state_machine/GUI"
+    ]
+}
