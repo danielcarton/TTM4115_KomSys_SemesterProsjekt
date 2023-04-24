@@ -1,10 +1,12 @@
 from appJar import gui
+from LoginPage import LoginPage
 from MainPage import MainPage
+from Button import Button
 
 class TimerGUI():
     def __init__(self):
         self.app = gui()
-        self.app.setSize(500, 800)
+        self.app.setSize("fullscreen")
         self.setup()
   
 
@@ -20,17 +22,15 @@ class TimerGUI():
         self.app.startFrameStack("Pages", start=0)
 
         self.app.startFrame()
-        self.app.button("Login", on_button_pressed)
+        button = Button(self.app, "Login", 200, 200, on_button_pressed)
         self.app.button("Quit", on_button_pressed)
         self.app.stopFrame()
 
-        self.app.startFrame()
-        self.app.entry("name")
-        self.app.button("Confirm", on_button_pressed)
-        self.app.stopFrame()
+        loginPage = LoginPage(self.app)
+        loginPage.setup()
 
-        mainPage = MainPage()
-        mainPage.AddMainPage(self.app)
+        mainPage = MainPage(self.app, ['General', 'TA', 'Group 1'])
+        mainPage.AddMainPage()
 
 
 
