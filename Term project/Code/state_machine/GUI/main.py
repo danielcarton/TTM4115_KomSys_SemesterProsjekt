@@ -1,5 +1,6 @@
 from appJar import gui
 from LoginPage import LoginPage
+from MessagePage import MessagePage
 from MainPage import MainPage
 from Button import Button
 
@@ -25,12 +26,16 @@ class TimerGUI():
         button = Button(self.app, "Login", 200, 200, on_button_pressed)
         self.app.button("Quit", on_button_pressed)
         self.app.stopFrame()
+        
 
         loginPage = LoginPage(self.app)
         loginPage.setup()
 
-        mainPage = MainPage(self.app, ['General', 'TA', 'Group 1'])
-        mainPage.AddMainPage()
+        mainPage = MainPage(self.app)
+        mainPage.init()
+
+        mainPage = MessagePage(self.app, ['General', 'TA', 'Group 1'])
+        mainPage.init()
 
 
 
