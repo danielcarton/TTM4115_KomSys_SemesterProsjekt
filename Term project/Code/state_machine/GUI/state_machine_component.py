@@ -1,3 +1,4 @@
+import json
 from stmpy import Machine, Driver
 from LoginPage import LoginPage
 from appJar import gui
@@ -5,12 +6,14 @@ from appJar import gui
 from MainPage import MainPage
 from MessagePage import MessagePage
 from Tasks import Tasks
-from mqtt_component import MQTT_Client
+from mqttClient import test
+#from mqtt_component import MQTT_Client
 
 class OurState():
 
     user = None
     is_user_admin = False
+    channels = ["General", "Team 1", "Team 2"]
 
     subscribed = []
     chosen_channel = None
@@ -32,8 +35,17 @@ class OurState():
     def __init__(self) -> None:
         self.app = gui()
         self.app.setSize("fullscreen")
-        self.mqtt = MQTT_Client()
+        self.mqtt = test()
+        self.mqtt.on_message = self.on_message
+        self.mqtt.on_connect = self.on_connect
+      
+        self.mqtt.loop_start()
 
+    def on_connect(self, client, userdata, flags, rc):
+        """
+        Callback when connected to MQTT
+        """
+        print('MQTT connected to {}'.format(client))
 
     def show_login_page(self):
         """
@@ -46,12 +58,15 @@ class OurState():
         self.login_ui.init(self.on_login)
 
 
-    def on_login(self):
+    def on_login(self, name, admin):
         # set user
         #self.user = username
         #self.is_user_admin = is_admin
         # trigger login transaction
-        
+        if(admin == "TA"):
+            self.is_user_admin = True
+        self.user = name
+        self.groupName = admin
         self.stm.send('login')
 
     def hide_login_page(self):
@@ -98,28 +113,62 @@ class OurState():
         """
         Show messaging window
         """
-        if self.messaging_ui == None:
-            self.messaging_ui = MessagePage(self.app, ['TA', 'Group1'])
-        self.messaging_ui.init(self.on_exit)
-        self.messaging_ui.show_message({'sender' : 'haakon', 'message' : "asdsagdsad"})
+        channels = []
 
-    def send_message(self, message):
+        if(self.is_user_admin):
+            for channel in self.channels:
+                self.mqtt.subscribe("ttm4115/{name}".format(name=channel))
+                channels.append(channel)
+        else:
+            self.mqtt.subscribe("ttm4115/{name}".format(name=self.groupName))
+            self.mqtt.subscribe("ttm4115/General")
+            channels.append("General")
+            channels.append(self.groupName)
+            
+
+        if self.messaging_ui == None:
+            self.messaging_ui = MessagePage(self.app, channels)
+
+        
+      
+        self.messaging_ui.init(self.on_exit, sendCallback=self.send_message)
+
+
+    def send_message(self, client, userdata, msg):
         """
         """
         # TODO
         # send messagfe to mqtt
+        command = {"message": msg, "sender": self.user}
+        payload = json.dumps(command)
+        self.mqtt.publish("ttm4115/{name}".format(name=client), payload)
 
-    def on_message(self, message):
+    def load_json(self, msg):
         """
+        Deserialize JSON message
         """
-        # TODO
-        # display message in ui
+        try:
+            data = json.loads(msg.payload.decode("utf-8"))
+        except Exception as err:
+            print('Message sent to topic {} had no valid JSON. Message ignored. {}'.format(msg.topic, err))
+            return
+        return data
+
+    def on_message(self, client, userdata, msg):
+
+        message = {"topic" : ""}
+        data = self.load_json(msg)
+        message["sender"] = data["sender"]
+        message["message"] = data["message"]
+        message["topic"] = msg.topic
+
         self.messaging_ui.show_message(message)
 
     def hide_messaging_page(self):
         """
         Hide messaging window
         """
+        self.mqtt.unsubscribe("ttm4115/team15/general")
         self.app.removeAllWidgets()
 
     def task_view_credential_check(self) -> str:

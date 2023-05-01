@@ -7,14 +7,14 @@ class LoginPage():
 
     def init(self, callback):
         self.app.startFrame("Login")
-        self.app.addLabelOptionBox("Role", ['TA', 'Group 1', 'Group 2'], 0, 0, 2)
+        self.app.addLabelOptionBox("Role", ['TA', 'Team 1', 'Team 2'], 0, 0, 2)
         self.app.addLabel("Name", "Name", 1, 0)
-        self.app.entry("name", "", 1, 1)
-        self.app.addButton("Confirm", callback, 2, 0, 2)
+        self.app.entry("nameinput", "", 1, 1)
+        self.app.addButton("Confirm", lambda: self.on_button_click(callback=callback), 2, 0, 2)
         self.app.stopFrame()
 
-    def on_button_click(self):
+    def on_button_click(self, callback):
         #Do something with the driver
-        name = self.app.getLabel("Name")
+        name = self.app.getEntry("nameinput")
         role = self.app.getOptionBox("Role")
-        self.app.selectFrame("Pages",num=2)
+        callback(name, role)
