@@ -39,7 +39,7 @@ messaging_home_trans = {
 home_tasks_view_trans = {
     'trigger': 'tasks',
     'source': 'home_state',
-    'function': 'task_view_credential_check'
+    'target': 'tasks_view_hl_state'
 }
 
 task_view_hl_task_edit_hl_trans = {
@@ -130,7 +130,7 @@ messaging_state = {
 
 tasks_view_hl_state = {
     'name': 'tasks_view_hl_state',
-    'entry': 'show_task_hl_page; receive_messages_on_all_topics; update_tasks_from_relevant_topic',
+    'entry': 'show_task_hl_page',
     'exit': 'hide_task_hl_page'
 }
 

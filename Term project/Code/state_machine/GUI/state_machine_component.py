@@ -4,6 +4,8 @@ from appJar import gui
 
 from MainPage import MainPage
 from MessagePage import MessagePage
+from Tasks import Tasks
+from mqtt_component import MQTT_Client
 
 class OurState():
 
@@ -30,6 +32,7 @@ class OurState():
     def __init__(self) -> None:
         self.app = gui()
         self.app.setSize("fullscreen")
+        self.mqtt = MQTT_Client()
 
 
     def show_login_page(self):
@@ -156,7 +159,9 @@ class OurState():
         """
         # TODO
         # show task HL page and pass callback to edit tasks HL and to exit
-        self.task_view_hl_ui.init(self.on_edit, self.on_exit)
+        if self.task_view_hl_ui == None:
+            self.task_view_hl_ui = Tasks(self.app)
+        self.task_view_hl_ui.init()
 
     def receive_messages_on_all_topics(self, message, topics):
         """
