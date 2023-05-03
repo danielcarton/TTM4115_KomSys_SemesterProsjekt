@@ -1,7 +1,7 @@
 import uuid
 from paho.mqtt.client import Client
 
-MQTT_BROKER = 'test.mosquitto.org'
+MQTT_BROKER = 'test.mosquitto.org' #For testing purposes
 MQTT_PORT = 1883
 
 

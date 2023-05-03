@@ -14,6 +14,7 @@ class OurState():
     user = None
     is_user_admin = False
     channels = ["General", "Team 1", "Team 2"]
+    #Hard-coding for testing
 
     subscribed = []
     chosen_channel = None
@@ -218,17 +219,17 @@ class OurState():
     def receive_messages_on_all_topics(self, message, topics):
         """
         """
-        # TODO
+        # Further work TODO
 
     def update_tasks_from_relevant_topic(self, tasks, topics):
         """
         """
-        # TODO
+        # Further work TODO
 
     def hide_task_hl_page(self):
         """
         """
-        # TODO
+        # Further work TODO
         self.app.removeAllWidgets()
 
     def show_task_ll_page(self):
@@ -241,12 +242,12 @@ class OurState():
     def receive_messages_on_single_topic(self, message, topic):
         """
         """
-        # TODO
+        # Further work TODO
 
     def update_tasks_from_single_topic(self, tasks, topic):
         """
         """
-        # TODO
+        # Further work TODO
 
     def hide_task_ll_page(self):
         """
@@ -270,7 +271,7 @@ class OurState():
     def send_all_tasks_to_relevant_topic(self, tasks, topics):
         """
         """
-        # TODO
+        # Further work TODO
 
     def show_edit_task_view_ll(self):
         """
@@ -288,7 +289,7 @@ class OurState():
     def send_all_tasks_to_single_topic(self, tasks, topic):
         """
         """
-        # TODO
+        # Further work TODO
 
     def show_access_hl_page(self):
         """
@@ -301,7 +302,7 @@ class OurState():
     def on_access_message(self, message):
         """
         """
-        # TODO
+        # Further work TODO
 
     def hide_access_hl_page(self):
         """
@@ -326,12 +327,12 @@ class OurState():
     def receive_access_message(self, access_message):
         """"
         """
-        # TODO
+        # Further work TODO
 
     def update_own_access(self, new_access):
         """
         """
-        # TODO
+        # Further work TODO
 
     def show_edit_access_page(self):
         """
@@ -349,6 +350,6 @@ class OurState():
     def send_access_changes(self, new_access):
         """"""
         """"""
-        # TODO
+        # Further work TODO
 
 

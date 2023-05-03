@@ -12,7 +12,7 @@ class MainPage():
 
     def cancel():
         self.stm.send('cancel')
-        #Needs further implementation
+        #Needs further implementation, not working atm
 
   
 

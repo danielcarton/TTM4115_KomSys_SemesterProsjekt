@@ -30,4 +30,3 @@ class Tasks():
     def saveTask(self):
         pass
 
-    #def exitTask(self):
