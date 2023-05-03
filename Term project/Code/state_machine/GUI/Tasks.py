@@ -25,6 +25,9 @@ class Tasks():
         with self.app.frame("taskView", row=0, column=1, rowspan=3) as self.taskView:
             self.app.addTextArea(title="payload_area", text=self.tasks[self.selectedTask]["payload"], row=0, column=0, rowspan=3)
             self.app.addButton("Save", self.saveTask, row=3, column=0)
+            #self.app.addButton("Go back", self.exitTask)
         
     def saveTask(self):
         pass
+
+    #def exitTask(self):

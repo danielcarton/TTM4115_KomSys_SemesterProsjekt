@@ -96,9 +96,11 @@ class OurState():
         # trigger tasks transaction
         self.stm.send('tasks')
 
-    def on_access_button(self):
+    def on_access_button(self, needHelp):
         # trigger access transaction
-        self.stm.send('access')
+        command = {"message": needHelp, "sender": self.user}
+        payload = json.dumps(command)
+        self.mqtt.publish("ttm4115/{name}/help/".format(name=self.groupName), payload)
 
     def hide_home_page(self):
         """
@@ -118,6 +120,7 @@ class OurState():
         if(self.is_user_admin):
             for channel in self.channels:
                 self.mqtt.subscribe("ttm4115/{name}".format(name=channel))
+                self.mqtt.subscribe("ttm4115/{name}/help/".format(name=channel))
                 channels.append(channel)
         else:
             self.mqtt.subscribe("ttm4115/{name}".format(name=self.groupName))
@@ -226,7 +229,7 @@ class OurState():
         """
         """
         # TODO
-        self.task_view_hl_ui.exit()
+        self.app.removeAllWidgets()
 
     def show_task_ll_page(self):
         """
