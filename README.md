@@ -37,4 +37,5 @@ Install required packages specified in the "requirements.txt" file using the fol
 ```pip install -r requirements.txt```
 
 If you install any additional packages that your teammates also will need, then add them to the "requirements.txt" file by using the following command.
+
 ```pip freeze > requirements.txt```
